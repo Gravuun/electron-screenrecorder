@@ -47,5 +47,10 @@ async function selectSource(source) {
         }
     };
 
+    // Create a stream of the passed source
+    const stream = await navigator.mediaDevices.getUserMedia(constraints);
 
+    // Preview the stream in the window
+    videoElement.srcObject = stream;
+    videoElement.play();
 }
